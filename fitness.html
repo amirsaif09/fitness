@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitFuel Supplements</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111827;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#22c55e;
+}
+
+.cart{
+background:#22c55e;
+padding:10px 20px;
+border-radius:30px;
+font-weight:600;
+color:black;
+}
+
+.hero{
+padding:80px 8%;
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero span{
+color:#22c55e;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+}
+
+.hero button{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+background:#22c55e;
+font-size:16px;
+font-weight:600;
+border-radius:10px;
+cursor:pointer;
+}
+
+.products{
+padding:60px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e293b;
+border-radius:15px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:22px;
+font-weight:700;
+color:#22c55e;
+margin:10px 0;
+}
+
+.card button{
+width:100%;
+padding:12px;
+border:none;
+background:#22c55e;
+font-weight:600;
+cursor:pointer;
+border-radius:8px;
+}
+
+.verify{
+padding:70px 8%;
+background:#111827;
+text-align:center;
+}
+
+.verify input{
+width:320px;
+padding:14px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+}
+
+.verify button{
+padding:14px 30px;
+border:none;
+background:#22c55e;
+border-radius:10px;
+margin-left:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+.result{
+margin-top:20px;
+font-size:20px;
+font-weight:600;
+}
+
+.testimonials{
+padding:70px 8%;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#111827;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.verify input{
+width:100%;
+margin-bottom:15px;
+}
+
+.verify button{
+margin-left:0;
+width:100%;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">FitFuel</div>
+<div class="cart">
+🛒 Cart (<span id="cart-count">0</span>)
+</div>
+</header>
+
+<section class="hero">
+<h1>Fuel Your <span>Fitness Journey</span></h1>
+<p>
+Premium quality supplements, whey proteins, creatine and mass gainers.
+100% authentic products with verification system.
+</p>
+<button>Shop Now</button>
+</section>
+
+<section class="products">
+
+<h2 class="section-title">Best Sellers</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1579722821273-0f6c6f7c8f7f?w=800">
+<div class="card-content">
+<h3>Whey Protein 2kg</h3>
+<div class="price">₹2499</div>
+<button onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=800">
+<div class="card-content">
+<h3>Creatine Monohydrate</h3>
+<div class="price">₹699</div>
+<button onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800">
+<div class="card-content">
+<h3>Mass Gainer 5kg</h3>
+<div class="price">₹1999</div>
+<button onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800">
+<div class="card-content">
+<h3>Pre Workout</h3>
+<div class="price">₹999</div>
+<button onclick="addToCart()">Add To Cart</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="verify">
+
+<h2 class="section-title">Verify Product</h2>
+
+<p>Enter your product authenticity code</p>
+
+<input type="text" id="code" placeholder="Enter Code">
+
+<button onclick="verifyCode()">Verify</button>
+
+<div id="verify-result" class="result"></div>
+
+</section>
+
+<section class="testimonials">
+
+<h2 class="section-title">Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>Best whey protein quality. Fast delivery.</p>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>Verification feature gives confidence.</p>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>Original supplements at great prices.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>FitFuel Supplements</h3>
+<p>100% Authentic Products | Secure Verification</p>
+
+</footer>
+
+<script>
+
+let cart = 0;
+
+function addToCart(){
+
+cart++;
+
+document.getElementById("cart-count").innerText = cart;
+
+}
+
+const validCodes = [
+"WHEY2026",
+"CREATINE99",
+"FITFUEL123",
+"GAINER555"
+];
+
+function verifyCode(){
+
+let code = document
+.getElementById("code")
+.value
+.toUpperCase();
+
+let result =
+document.getElementById("verify-result");
+
+if(validCodes.includes(code)){
+
+result.style.color="#22c55e";
+result.innerHTML="✅ Original Product Verified";
+
+}else{
+
+result.style.color="#ef4444";
+result.innerHTML="❌ Invalid Product Code";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
